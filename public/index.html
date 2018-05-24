@@ -1,0 +1,83 @@
+ <html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="C:\Pro\public\style.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script language="javascript" type="text/javascript">
+        function dynamicdropdown(listindex)
+        {
+            switch (listindex)
+            {
+            case "India" :
+                document.getElementById("State").options[0]=new Option("Select State","");
+                document.getElementById("State").options[1]=new Option("Delhi","Delhi");
+                document.getElementById("State").options[2]=new Option("Himanchal","Himanchal");
+                break;
+            case "USA" :
+                document.getElementById("State").options[0]=new Option("Select State","");
+                document.getElementById("State").options[1]=new Option("Florida","Florida");
+                document.getElementById("State").options[2]=new Option("Texas","Texas");              
+                break;
+            case "Australia" :
+                document.getElementById("State").options[0]=new Option("Select State","");
+                document.getElementById("State").options[1]=new Option("Victoria","Victoria");
+                document.getElementById("State").options[2]=new Option("Queensland","Queensland");
+                break;
+            case "" :
+                var x = document.getElementById("State");
+                x.remove(2);
+                var x = document.getElementById("State");
+                x.remove(1);
+                var x = document.getElementById("State");
+                x.remove(0);
+                document.getElementById("State").options[0]=new Option("Select State","");
+                break;
+            }
+            return true;
+        }
+        </script>
+    </head>
+    <title>Front End SPA</title>
+    <body>
+        <div class="container">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name.."></br></br>
+            
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.."></br></br>
+            
+            <label for="pnum">Phone No.</label>
+            <input type="" id="pnum" name="phoneno" placeholder="Your Phone No."></br></br>
+
+            <label for="emailid">Email Id</label>
+            <input type="email" id="email" name="phoneno" placeholder="Your Email Address"></br></br>
+                
+            <div class="category_div" id="category_div">Country:
+                <select id="Country" name="Country" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+                <option value="">Select Country</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Australia">Australia</option>
+                </select>
+            </div></br>
+
+            <div class="sub_category_div" id="sub_category_div">State:
+                <script type="text/javascript" language="JavaScript">
+                    document.write('<select name="State" id="State"><option value="">Select State</option></select>')
+                </script>
+                <noscript>
+                </noscript>
+            </div>
+
+            
+            <div class="sub_sub_category_div" id="sub_sub_category_div">City:
+                    <script type="text/javascript" language="JavaScript">
+                        document.write('<select name="City" id="City"><option value="">Select City</option></select>')
+                    </script>
+                    <noscript>
+                    </noscript>
+                </div>
+        </div></br>
+        <input type="submit" value="Submit">
+    </body>
+</html>
+    
